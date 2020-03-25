@@ -20,7 +20,7 @@ public class DeleteSQL {
 			//ojdbc6.jar파일이 없거나 연동되지 않았을때 예외발생
 			System.out.println("오라클 드라이버 로딩 실패");
 			e.printStackTrace();
-			//2.커넥션 객체를 통해 DB 연결
+			
 		}
 	}
 	//Oracle DB에 대한 연결을 진행한다.
@@ -53,7 +53,7 @@ public class DeleteSQL {
 			stmt = con.createStatement();
 			/*
 			 test1 삭제시 제약조건위배 예외발생
-			 test99와 같이 DB에 입려고디지 않은 레코드 삭제시에는 예외없이
+			 test99와 같이 DB에 입력되지 않은 레코드 삭제시에는 예외없이
 			 	삭제되지 않음
 			 */
 			String query = "DELETE FROM member WHERE id='test99'";
@@ -88,5 +88,4 @@ public class DeleteSQL {
 
 		new DeleteSQL().execute();
 	}
-
 }
